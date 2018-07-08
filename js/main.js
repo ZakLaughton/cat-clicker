@@ -6,7 +6,13 @@ let cats = [
 
 console.log(`cats: ${cats.length}`)
 cats.forEach(function(cat, index) {
-    catHtml = `<div class="cat cat1">
+    catListItem = $('<li/>', {
+        class: `cat-name cat${index}`,
+        html: cat.name
+    })
+    $('#cat-list').append(catListItem)
+    
+    catHtml = `<div class="cat cat${index}">
                    <h2 class="cat-name">${cat.name}</h2>
                    <p>Clicks: <span class="click-count">0</span></p>
                    <img src="img/${cat.image}" alt="Cat ${cat.name}" class="clicker-cat">
@@ -16,16 +22,15 @@ cats.forEach(function(cat, index) {
         class: `cat cat${index}`,
         html: catHtml
     }).appendTo('main')
-    //$('.click-count').text('0');
-    //$(cat).children('.cat-name').text(catNames[index])
 
-    //$(cat).children('.clicker-cat').click((function(catCopy) {
-        //return function() {
-            //let clickCount = Number($(catCopy).find('.click-count').text())
-            //clickCount += 1;
-            //$(catCopy).find('.click-count').text(clickCount);
-        //}
-    //})(cat))
+    $(`.cat${index}`).children('.clicker-cat').click((function(indexCopy) {
+        return function() {
+            let cat = $(`.cat${index}`)
+            let clickCount = Number(cat.find('.click-count').text())
+            clickCount += 1;
+            cat.find('.click-count').text(clickCount);
+        }
+    })(index))
     
 })
 
