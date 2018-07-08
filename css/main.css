@@ -1,10 +1,24 @@
 body {
     margin: 0;
+    display: flex;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-div {
-    display: inline-block;
-    width: 50%;
+aside {
+    width: 10%;
+}
+
+main {
+    width: 90%;
+}
+
+.cat{
+    width: 100%;
+}
+
+.hidden{
+    display: none;
 }
 
 .clicker-cat {
