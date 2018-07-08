@@ -17,11 +17,17 @@ main {
     width: 90%;
 }
 
-.cat{
+main .cat {
     width: 100%;
 }
 
-.hidden{
+@media only screen and (min-width: 500px) {
+    main .cat {
+        width: 500px;
+    }
+}
+
+.hidden {
     display: none;
 }
 
