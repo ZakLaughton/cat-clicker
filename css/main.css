@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+div {
+    display: inline-block;
+}
+
+.cat {
+    width: 50%;
+}
+
+.clicker-cat {
+    width: 100%;
+}
