@@ -1,7 +1,11 @@
 let catNames = ['Ross', 'Rachel']
 let cats = [
     {name: 'Ross', image: 'cat1.jpg'},
-    {name: 'Rachel', image: 'cat2.jpg'}
+    {name: 'Rachel', image: 'cat2.jpg'},
+    {name: 'Joey', image: 'cat3.jpg'},
+    {name: 'Pheobe', image: 'cat4.jpg'},
+    {name: 'Monica', image: 'cat5.jpg'},
+    {name: 'Chandler', image: 'cat6.jpg'}
 ]
 
 console.log(`cats: ${cats.length}`)
