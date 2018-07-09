@@ -1,5 +1,8 @@
 (function(){
     let model = {
+        /*
+         * Cat data
+         */
         currentCat: null,
         cats: [
             {
@@ -32,7 +35,12 @@
                 image: 'cat6.jpg',
                 clickCount: 0
             }
-        ]
+        ],
+
+        /*
+         * Admin form data
+         */
+        adminFormVisible: false
     };
 
     let octopus = {
@@ -43,8 +51,12 @@
             // Initialize views
             catListView.init();
             catView.init();
+            adminView.init();
         },
 
+        /*
+         * Cat data
+         */
         getCurrentCat: function() {
             return model.currentCat;
         },
@@ -60,6 +72,13 @@
         incrementCounter: function() {
             model.currentCat.clickCount++;
             catView.render();
+        },
+
+        /*
+         * Admin form data
+         */
+        getAdminFormVisibility: function() {
+            return model.adminFormVisible;
         }
     }
 
@@ -108,6 +127,23 @@
                 })(cat));
 
                 this.catListElem.append(elem);
+            }
+        }
+    }
+
+    let adminView = {
+        init: function () {
+            this.adminFormElem = $('#admin-form form')
+            this.render()
+        },
+
+        render: function() {
+            let visible = octopus.getAdminFormVisibility();
+            console.log(visible)
+            if (visible) {
+                this.adminFormElem.show();
+            } else {
+                this.adminFormElem.hide();
             }
         }
     }
