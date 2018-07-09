@@ -1,14 +1,38 @@
-let catNames = ['Ross', 'Rachel']
-let cats = [
-    {name: 'Ross', image: 'cat1.jpg'},
-    {name: 'Rachel', image: 'cat2.jpg'},
-    {name: 'Joey', image: 'cat3.jpg'},
-    {name: 'Pheobe', image: 'cat4.jpg'},
-    {name: 'Monica', image: 'cat5.jpg'},
-    {name: 'Chandler', image: 'cat6.jpg'}
-]
+$(function(){
+    let data = {
+        cats: [
+            {name: 'Ross', image: 'cat1.jpg'},
+            {name: 'Rachel', image: 'cat2.jpg'},
+            {name: 'Joey', image: 'cat3.jpg'},
+            {name: 'Pheobe', image: 'cat4.jpg'},
+            {name: 'Monica', image: 'cat5.jpg'},
+            {name: 'Chandler', image: 'cat6.jpg'}
+        ]
+    };
 
-console.log(`cats: ${cats.length}`)
+    let octopus = {
+        init: function() {
+            view.init();
+        }
+    }
+
+    let view = {
+        init: function() {
+            this.name = $('#cat-name') 
+            this.clickCount = $('#click-count') 
+            this.clickerImage = $('#clicker-image') 
+            view.render();
+            octopus.getCatInfo()
+
+        }
+
+        render: function() {
+        }
+    }
+
+    octopus.init();
+})();
+
 cats.forEach(function(cat, index) {
     // Add cat to list
     catListItem = $('<li/>', {
@@ -24,12 +48,6 @@ cats.forEach(function(cat, index) {
     })(index))
     
     // Add cat to main
-    catHtml = `<div class="cat cat${index}">
-                   <h2 class="cat-name">${cat.name}</h2>
-                   <p>Clicks: <span class="click-count">0</span></p>
-                   <img src="img/${cat.image}" alt="Cat ${cat.name}" class="clicker-cat">
-               </div>
-           `
     $('<div/>', {
         class: `hidden cat cat${index}`,
         html: catHtml
