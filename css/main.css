@@ -17,21 +17,17 @@ main {
     width: 90%;
 }
 
-main .cat {
+main #cat {
     width: 100%;
 }
 
 @media only screen and (min-width: 500px) {
-    main .cat {
+    main #cat {
         width: 500px;
     }
 }
 
-.hidden {
-    display: none;
-}
-
-.clicker-cat {
+#clicker-image {
     width: 100%;
 }
 
