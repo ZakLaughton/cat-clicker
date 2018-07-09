@@ -134,6 +134,10 @@
     let adminView = {
         init: function () {
             this.adminFormElem = $('#admin-form form')
+            let adminButton = $('button[name="adminform"]')
+            adminButton.click(function() {
+                console.log('Clicked the admin form button')
+            })
             this.render()
         },
 
