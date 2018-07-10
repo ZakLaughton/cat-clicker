@@ -115,7 +115,7 @@
       let cats = octopus.getCats();
       this.catListElem.innerHTML = '';
 
-      for (const [index, cat] of cats.entries()) {
+      for (const cat of cats) {
         let elem = document.createElement('li');
         elem.textContent = cat.name;
 
@@ -126,12 +126,12 @@
               octopus.setCurrentCat(cat);
               catView.render();
             };
-          })(cat),
+          })(cat)
         );
 
         this.catListElem.append(elem);
       }
-    },
+    }
   };
 
   let adminView = {
