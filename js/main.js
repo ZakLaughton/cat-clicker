@@ -1,8 +1,8 @@
 (function() {
   let model = {
-    /*
-         * Cat data
-         */
+    /**
+     * Cat data
+     */
     currentCat: null,
     cats: [
       {
@@ -37,10 +37,10 @@
       },
     ],
 
-    /*
-         * Admin form data
-         */
-    adminFormVisible: false,
+    /**
+     * Admin form data
+     */
+    adminFormVisible: false
   };
 
   let octopus = {
@@ -126,20 +126,19 @@
               octopus.setCurrentCat(cat);
               catView.render();
             };
-          })(cat)
+          })(cat),
         );
 
         this.catListElem.append(elem);
       }
-    }
+    },
   };
 
   let adminView = {
     init: function() {
       this.adminFormElem = $('#admin-form form');
       let adminButton = $('button[name="adminform"]');
-      adminButton.click(function() {
-      });
+      adminButton.click(function() {});
       this.render();
     },
 

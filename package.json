@@ -1,0 +1,19 @@
+{
+  "name": "cat-clicker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlaughton/cat-clicker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zlaughton/cat-clicker/issues"
+  },
+  "homepage": "https://github.com/zlaughton/cat-clicker#readme"
+}
