@@ -1,43 +1,43 @@
 body {
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #cat-list li {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 sidebar {
-    width: 10%;
+  width: 10%;
 }
 
 main {
-    width: 90%;
+  width: 90%;
 }
 
 main #cat {
-    width: 100%;
+  width: 100%;
 }
 
 @media only screen and (min-width: 500px) {
-    main #cat {
-        width: 500px;
-    }
+  main #cat {
+    width: 500px;
+  }
 }
 
 #clicker-image {
-    width: 100%;
+  width: 100%;
 }
 
 #cat-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 aside {
-    display: block;
+  display: block;
 }
