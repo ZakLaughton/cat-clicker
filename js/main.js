@@ -139,14 +139,12 @@
       this.adminFormElem = $('#admin-form form');
       let adminButton = $('button[name="adminform"]');
       adminButton.click(function() {
-        console.log('Clicked the admin form button');
       });
       this.render();
     },
 
     render: function() {
       let visible = octopus.getAdminFormVisibility();
-      console.log(visible);
       if (visible) {
         this.adminFormElem.show();
       } else {
