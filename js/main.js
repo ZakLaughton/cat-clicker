@@ -123,7 +123,7 @@
 
     render: function() {
       let cats = octopus.getCats();
-      this.catListElem.innerHTML = '';
+      this.catListElem.empty();
 
       for (const cat of cats) {
         let elem = document.createElement('li');
@@ -139,7 +139,7 @@
           })(cat),
         );
 
-        this.catListElem.html(elem);
+        this.catListElem.append(elem);
       }
     },
   };
