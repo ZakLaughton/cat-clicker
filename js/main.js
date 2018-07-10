@@ -89,7 +89,7 @@
       model.currentCat.name = name;
       model.currentCat.image = imgSrc;
       model.currentCat.clickCount = clickCount;
-    }
+    },
   };
 
   let catView = {
@@ -135,8 +135,9 @@
             return function() {
               octopus.setCurrentCat(cat);
               catView.render();
+              adminView.render();
             };
-          })(cat),
+          })(cat)
         );
 
         this.catListElem.append(elem);
@@ -168,18 +169,24 @@
       // Updated data on submit
       this.adminFormElem.submit(function(evt) {
         evt.preventDefault();
-        console.log(nameFormElem.val(), imgSrcFormElem.val(), clickCountFormElem.val())
-        octopus.setCurrentCatData(nameFormElem.val(),
-                                  imgSrcFormElem.val(),
-                                  clickCountFormElem.val());
+        octopus.setCurrentCatData(
+          nameFormElem.val(),
+          imgSrcFormElem.val(),
+          clickCountFormElem.val()
+        );
         catView.render();
         catListView.render();
-      })
+      });
       this.render();
     },
 
     render: function() {
       let visible = octopus.getAdminFormVisibility();
+      let currentCat = octopus.getCurrentCat();
+
+      $('input[name="catname"]').attr('value', currentCat.name);
+      $('input[name="catimage"]').attr('value', currentCat.image);
+      $('input[name="clickcount"]').attr('value', currentCat.clickCount);
       if (visible) {
         this.adminFormElem.show();
       } else {
